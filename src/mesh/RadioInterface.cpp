@@ -52,8 +52,10 @@ const RegionInfo regions[] = {
        500 mW, or 27 dBm. It also states that we can use interference avoidance and spectrum access techniques (such as LBT +
        AFA) to avoid a duty cycle. (Please refer to line P page 22 of this document.)
        https://www.etsi.org/deliver/etsi_en/300200_300299/30022002/03.01.01_60/en_30022002v030101p.pdf
+       
+       Banda full para probar ShortTurbo y full power
      */
-    RDEF(EU_868, 863.0f, 867.00f, 10, 0, 30, false, false, false),
+    RDEF(EU_868, 863.0f, 870.00f, 10, 0, 40, false, false, false),
 
     /*
         https://lora-alliance.org/wp-content/uploads/2020/11/lorawan_regional_parameters_v1.0.3reva_0.pdf
