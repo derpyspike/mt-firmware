@@ -653,7 +653,7 @@ void NodeDB::installDefaultConfig(bool preserveKey = false)
     strncpy(config.network.ntp_server, "meshtastic.pool.ntp.org", 32);
 
 #if (defined(T_DECK) || defined(T_WATCH_S3) || defined(UNPHONE) || defined(PICOMPUTER_S3) || defined(SENSECAP_INDICATOR) ||      \
-     defined(ELECROW_PANEL)||defined(HELTEC_V4_TFT)) &&                                                                                                  \
+     defined(ELECROW_PANEL) || defined(HELTEC_V4_TFT)) &&                                                                        \
     HAS_TFT
     // switch BT off by default; use TFT programming mode or hotkey to enable
     config.bluetooth.enabled = false;
@@ -716,12 +716,6 @@ void NodeDB::installDefaultConfig(bool preserveKey = false)
 
 #ifdef USERPREFS_NETWORK_WIFI_PSK
     strncpy(config.network.wifi_psk, USERPREFS_NETWORK_WIFI_PSK, sizeof(config.network.wifi_psk));
-#endif
-
-#if defined(USERPREFS_NETWORK_IPV6_ENABLED)
-    config.network.ipv6_enabled = USERPREFS_NETWORK_IPV6_ENABLED;
-#else
-    config.network.ipv6_enabled = default_network_ipv6_enabled;
 #endif
 
 #ifdef DISPLAY_FLIP_SCREEN
