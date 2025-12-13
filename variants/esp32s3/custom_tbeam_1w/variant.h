@@ -43,8 +43,10 @@
 #define I2C_SCL         9
 
 // --- GPS (L76K) ---
-#define GPS_RX_PIN      6  
-#define GPS_TX_PIN      5  
+//FIX: Swap RX and TX because of the notation
+#define GPS_RX_PIN      5  
+#define GPS_TX_PIN      6  
+
 #define GPS_1PPS_PIN    7
 #define GPS_WAKEUP_PIN  16
 
