@@ -5,7 +5,7 @@
 
 // This function is called by the Arduino framework very early,
 // before setup() and before the SPI bus initializes.
-extern "C" void initVariant() {
+/*extern "C" void initVariant() {
     // 1. Power on the Radio Regulator (LDO)
     // The T-Beam 1W requires IO40 High to provide power to the SX1262.
     pinMode(PIN_LORA_POWER, OUTPUT);
@@ -24,3 +24,4 @@ extern "C" void initVariant() {
     // 4. Give the LDO time to stabilize (20ms is usually enough)
     delay(20);
 }
+    */
