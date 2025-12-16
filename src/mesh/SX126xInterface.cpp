@@ -85,6 +85,13 @@ template <typename T> bool SX126xInterface<T>::init()
         power = -9;
 
     int res = lora.begin(getFreq(), bw, sf, cr, syncWord, power, preambleLength, tcxoVoltage, useRegulatorLDO);
+
+#ifdef SX126X_PA_RAMP_US
+    // Set custom PA ramp time for boards requiring longer stabilization (e.g., T-Beam 1W needs >800us)
+    if (res == RADIOLIB_ERR_NONE) {
+        lora.setPaRampTime(SX126X_PA_RAMP_US);
+    }
+#endif
     // \todo Display actual typename of the adapter, not just `SX126x`
     LOG_INFO("SX126x init result %d", res);
     if (res == RADIOLIB_ERR_CHIP_NOT_FOUND || res == RADIOLIB_ERR_SPI_CMD_FAILED)
